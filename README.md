@@ -1,54 +1,162 @@
-# React + TypeScript + Vite
+# Feedback & Hashtag Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/feedback-hashtag-explorer)  
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](/LICENSE)  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Table of Contents
 
-## Expanding the ESLint configuration
+- [About](#-about)  
+- [Features](#-features)  
+- [Tech Stack](#-tech-stack)  
+- [Project Structure](#-project-structure)  
+- [Getting Started](#-getting-started)  
+  - [Prerequisites](#prerequisites)  
+  - [Installation](#installation)  
+  - [Running Locally](#running-locally)  
+- [Usage](#-usage)  
+- [Screenshots](#-screenshots)  
+- [Contributing](#-contributing)  
+- [License](#-license)  
+- [Contact](#-contact)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📖 About
+
+**Feedback & Hashtag Explorer** is a small MERN-style Jamstack application built with Vite, React, TypeScript, and Zustand. It allows users to submit feedback items, explore hashtag statistics, and provides a clean, responsive UI with context-based state management.
+
+---
+
+## ✨ Features
+
+- ✅ **Submit & List Feedback**  
+- 🔖 **Hashtag Extraction & Listing**  
+- 📦 **Global State** with Zustand  
+- 🎨 **Responsive Layout** with CSS Modules & Custom Styles  
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework:** React 19 (via Vite)
+- **Language:** TypeScript
+- **State Management:** Zustand
+- **Styling:** CSS Modules & Plain CSS
+- **Icons:** react-icons
+- **Deployment:** Vercel
+
+---
+
+## 🗂 Project Structure
+
+```bash
+├── public
+│   └── corpComment.svg
+├── src
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── components
+│   │   ├── ErrorMessage.tsx
+│   │   ├── Feedback
+│   │   │   ├── FeedbackForm.tsx
+│   │   │   ├── FeedbackItem.tsx
+│   │   │   └── FeedbackList.tsx
+│   │   ├── Hashtag
+│   │   │   ├── HashtagItem.tsx
+│   │   │   └── HashtagList.tsx
+│   │   ├── Layout
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Container.tsx
+│   │   ├── Logo.tsx
+│   │   ├── PageHeading.tsx
+│   │   ├── Pattern.tsx
+│   │   └── SkeletonLoader.tsx
+│   ├── lib
+│   │   ├── hooks.ts
+│   │   └── type.ts
+│   ├── stores
+│   │   └── feedbackItemsStore.ts
+│   └── styles
+│       ├── SkeletonLoader.css
+│       └── index.css
+├── tsconfig.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Prerequisites
+
+- Node.js ≥ 18  
+- pnpm ≥ 8 (or npm/yarn if you prefer)  
+
+### Installation
+
+1. **Clone the repo**  
+
+   ```bash
+   git clone https://github.com/aminetiouk/CorpCommentReact.git
+
+   cd CorpCommentReact
+   ```
+
+2. **Install dependencies**  
+
+   ```bash
+   pnpm install
+   ```
+
+### Running Locally
+
+```bash
+pnpm dev
 ```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🎬 Usage
+
+1. **Add feedback** via the form on the homepage.  
+2. **View feedback items** in the list below the form.  
+3. **Hashtag extraction** populates the “Hashtags” panel with all unique tags.  
+
+---
+
+## 📸 Screenshots
+
+![Feedback Form & List](public/screenshot.png)  
+*Figure 1.* Feedback form, submitted items, and hashtag panel.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+```
+1. Fork the repository  
+2. Create your feature branch (\`git checkout -b feature/my-feature\`)  
+3. Commit your changes (\`git commit -m 'feat: add new feature'\`)  
+4. Push to the branch (\`git push origin feature/my-feature\`)  
+5. Open a Pull Request
+```
+Please adhere to the existing code style and include tests for new functionality.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See [LICENSE](/LICENSE) for details.
+
+---
+
+## 📬 Contact
+
+**Your Name** • [@aminetiouk](https://www.linkedin.com/in/aminetiouk/)  
+Project Link: [https://github.com/aminetiouk/CorpCommentReact](https://github.com/aminetiouk/CorpCommentReact)  
